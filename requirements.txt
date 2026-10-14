@@ -1,0 +1,33 @@
+# --- core service ---
+fastapi>=0.115
+uvicorn[standard]>=0.30
+python-multipart>=0.0.9
+pydantic>=2.7
+python-dotenv>=1.0
+pyyaml>=6.0
+httpx>=0.27
+
+# --- ingestion ---
+pymupdf>=1.24
+youtube-transcript-api>=1.0
+yt-dlp>=2025.1          # second route to captions when the transcript endpoint rate-limits
+numpy>=1.26
+# Optional, for local video files instead of YouTube links:  pip install faster-whisper
+
+# --- retrieval ---
+fastembed>=0.4
+rank-bm25>=0.2.2
+
+# --- LLM providers (generator + cross-model verifier) ---
+anthropic>=0.80
+google-genai>=1.0
+
+# --- answer verification sandbox ---
+sympy>=1.12
+
+# --- evaluation ---
+ragas==0.4.3
+langchain-community<0.4  # ragas 0.4.3 imports a module that 0.4 removed
+langchain-core<1
+matplotlib>=3.8
+pytest>=8.0

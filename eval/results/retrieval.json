@@ -1,0 +1,177 @@
+{
+  "description": "58 questions with known source locations, top 8 retrieved units, 996 units in the index. Embeddings: 384-d local model. No LLM involved.",
+  "ablation": [
+    {
+      "retriever": "hybrid",
+      "n": 58,
+      "hit@1": 0.621,
+      "hit@3": 0.845,
+      "hit@8": 1.0,
+      "mrr": 0.757,
+      "gold_source_recall": 0.879,
+      "location_precision_lower_bound": 0.276
+    },
+    {
+      "retriever": "dense",
+      "n": 58,
+      "hit@1": 0.621,
+      "hit@3": 0.793,
+      "hit@8": 0.983,
+      "mrr": 0.741,
+      "gold_source_recall": 0.879,
+      "location_precision_lower_bound": 0.265
+    },
+    {
+      "retriever": "bm25",
+      "n": 58,
+      "hit@1": 0.517,
+      "hit@3": 0.828,
+      "hit@8": 0.897,
+      "mrr": 0.662,
+      "gold_source_recall": 0.799,
+      "location_precision_lower_bound": 0.267
+    }
+  ],
+  "by_gold_modality": [
+    {
+      "gold_modality": "slides",
+      "n": 37,
+      "hit@1": 0.568,
+      "hit@3": 0.784,
+      "hit@8": 1.0,
+      "mrr": 0.711,
+      "gold_source_recall": 0.824,
+      "location_precision_lower_bound": 0.226
+    },
+    {
+      "gold_modality": "textbook",
+      "n": 16,
+      "hit@1": 0.75,
+      "hit@3": 1.0,
+      "hit@8": 1.0,
+      "mrr": 0.865,
+      "gold_source_recall": 1.0,
+      "location_precision_lower_bound": 0.383
+    },
+    {
+      "gold_modality": "video",
+      "n": 2,
+      "hit@1": 0.5,
+      "hit@3": 1.0,
+      "hit@8": 1.0,
+      "mrr": 0.75,
+      "gold_source_recall": 1.0,
+      "location_precision_lower_bound": 0.562
+    },
+    {
+      "gold_modality": "figure",
+      "n": 3,
+      "hit@1": 0.667,
+      "hit@3": 0.667,
+      "hit@8": 1.0,
+      "mrr": 0.75,
+      "gold_source_recall": 0.833,
+      "location_precision_lower_bound": 0.125
+    }
+  ],
+  "top_similarity": {
+    "in_scope": {
+      "min": 0.536,
+      "median": 0.815,
+      "max": 0.896
+    },
+    "off_topic": {
+      "min": 0.485,
+      "median": 0.575,
+      "max": 0.693
+    },
+    "uncovered": {
+      "min": 0.618,
+      "median": 0.683,
+      "max": 0.778
+    }
+  },
+  "refusal": {
+    "threshold": 0.735,
+    "scored_on": "held-out half",
+    "in_scope_answered": 1.0,
+    "off_topic_declined": 1.0,
+    "uncovered_in_domain_declined": 0.8,
+    "precision": 1.0,
+    "recall": 0.9
+  },
+  "refusal_all_questions": {
+    "threshold": 0.735,
+    "in_scope_answered": 1.0,
+    "off_topic_declined": 0.9,
+    "uncovered_in_domain_declined": 0.6,
+    "precision": 1.0,
+    "recall": 0.75
+  },
+  "refusal_without_rare_term_rescue": {
+    "threshold": 0.735,
+    "in_scope_answered": 0.897,
+    "off_topic_declined": 1.0,
+    "uncovered_in_domain_declined": 0.9,
+    "precision": 0.76,
+    "recall": 0.95
+  },
+  "refusal_threshold_sweep": [
+    {
+      "threshold": 0.55,
+      "in_scope_answered": 1.0,
+      "off_topic_declined": 0.2,
+      "uncovered_in_domain_declined": 0.0,
+      "precision": 1.0,
+      "recall": 0.1
+    },
+    {
+      "threshold": 0.6,
+      "in_scope_answered": 1.0,
+      "off_topic_declined": 0.5,
+      "uncovered_in_domain_declined": 0.0,
+      "precision": 1.0,
+      "recall": 0.25
+    },
+    {
+      "threshold": 0.65,
+      "in_scope_answered": 1.0,
+      "off_topic_declined": 0.7,
+      "uncovered_in_domain_declined": 0.1,
+      "precision": 1.0,
+      "recall": 0.4
+    },
+    {
+      "threshold": 0.7,
+      "in_scope_answered": 1.0,
+      "off_topic_declined": 0.9,
+      "uncovered_in_domain_declined": 0.6,
+      "precision": 1.0,
+      "recall": 0.75
+    },
+    {
+      "threshold": 0.75,
+      "in_scope_answered": 1.0,
+      "off_topic_declined": 0.9,
+      "uncovered_in_domain_declined": 0.6,
+      "precision": 1.0,
+      "recall": 0.75
+    },
+    {
+      "threshold": 0.8,
+      "in_scope_answered": 0.897,
+      "off_topic_declined": 0.9,
+      "uncovered_in_domain_declined": 0.6,
+      "precision": 0.714,
+      "recall": 0.75
+    }
+  ],
+  "missed": [],
+  "caveats": [
+    "Gold locations list the places we verified, not every place an answer appears, so location precision is a lower bound.",
+    "The similarity gate is only the first refusal layer. In-domain questions the material does not cover score close to answerable ones and mostly pass it; they are meant to be caught by the generator's coverage judgement, which eval/run_ragas.py measures.",
+    "Small test set (58 answerable, 10 off-topic, 10 uncovered); the threshold was fitted on half and scored on the other half.",
+    "The gate's rare-term rule was designed while looking at this test set, so even the held-out half is not a fully independent test of it.",
+    "Figure units were not built for this run (no vision model key), so figure-targeted questions could only be matched through slide text."
+  ]
+}

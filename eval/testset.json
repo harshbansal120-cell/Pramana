@@ -1,0 +1,1038 @@
+{
+ "_about": "Team-built test set for the default course (MIT 6.041SC lectures 1-8 + Grinstead & Snell ch. 1-6). Gold locations were found by reading the slides and by keyword search over the textbook and captions, not with the retriever under test. `from`/`to` are slide numbers, PDF page numbers, or seconds. A gold list is the places we verified, not every place the answer appears, so location-based precision is a lower bound. After the first run, the four questions with no gold hit (s22, s28, s30, s37) were judged by hand: the retrieved passages did answer them, so those locations were added to their gold lists.",
+ "in_scope": [
+  {
+   "id": "s01",
+   "modality": "slides",
+   "question": "What two properties must the list of outcomes in a sample space have?",
+   "reference": "The outcomes must be mutually exclusive and collectively exhaustive.",
+   "gold": [
+    {
+     "source": "L01-slides",
+     "from": 2,
+     "to": 2
+    },
+    {
+     "source": "L02-slides",
+     "from": 2,
+     "to": 2
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "modality": "slides",
+   "question": "What are the axioms of probability?",
+   "reference": "Nonnegativity: P(A) >= 0. Normalization: P(Omega) = 1. Additivity: if A and B are disjoint, P(A union B) = P(A) + P(B).",
+   "gold": [
+    {
+     "source": "L01-slides",
+     "from": 5,
+     "to": 5
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "modality": "slides",
+   "question": "Under a discrete uniform probability law, how do you compute the probability of an event?",
+   "reference": "P(A) is the number of elements of A divided by the total number of sample points, so computing probabilities reduces to counting.",
+   "gold": [
+    {
+     "source": "L01-slides",
+     "from": 7,
+     "to": 7
+    },
+    {
+     "source": "L04-slides",
+     "from": 2,
+     "to": 2
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "modality": "slides",
+   "question": "For two random numbers chosen uniformly in [0,1], how is the probability of an event defined?",
+   "reference": "Under the continuous uniform law on the unit square, probability equals area.",
+   "gold": [
+    {
+     "source": "L01-slides",
+     "from": 8,
+     "to": 8
+    },
+    {
+     "source": "L01-slides",
+     "from": 4,
+     "to": 4
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "modality": "slides",
+   "question": "If P(n) = 2^-n for n = 1, 2, ..., what is the probability that the outcome is even?",
+   "reference": "P(even) = 1/4 + 1/16 + 1/64 + ... = 1/3, using countable additivity.",
+   "gold": [
+    {
+     "source": "L01-slides",
+     "from": 9,
+     "to": 9
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "modality": "slides",
+   "question": "How is the conditional probability P(A|B) defined?",
+   "reference": "P(A|B) = P(A intersect B) / P(B), assuming P(B) > 0; B becomes the new universe.",
+   "gold": [
+    {
+     "source": "L02-slides",
+     "from": 3,
+     "to": 3
+    },
+    {
+     "source": "L03-slides",
+     "from": 1,
+     "to": 1
+    },
+    {
+     "source": "textbook",
+     "from": 141,
+     "to": 143
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "modality": "slides",
+   "question": "In the radar example, what are the probability that a plane is present and the probability that the radar registers it when it is present?",
+   "reference": "P(A) = 0.05 that an airplane is flying above, and P(B|A) = 0.99 that something registers on the radar when it is.",
+   "gold": [
+    {
+     "source": "L02-slides",
+     "from": 5,
+     "to": 5
+    },
+    {
+     "source": "L02-video",
+     "from": 1500,
+     "to": 2000
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "modality": "slides",
+   "question": "State the multiplication rule for the probability of three events all occurring.",
+   "reference": "P(A and B and C) = P(A) * P(B|A) * P(C|A and B).",
+   "gold": [
+    {
+     "source": "L02-slides",
+     "from": 6,
+     "to": 6
+    },
+    {
+     "source": "L03-slides",
+     "from": 1,
+     "to": 1
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "modality": "slides",
+   "question": "What does the total probability theorem say?",
+   "reference": "If A1, ..., An partition the sample space, then P(B) = P(A1)P(B|A1) + ... + P(An)P(B|An). It is a divide-and-conquer way to compute P(B).",
+   "gold": [
+    {
+     "source": "L02-slides",
+     "from": 7,
+     "to": 7
+    },
+    {
+     "source": "L03-slides",
+     "from": 1,
+     "to": 1
+    },
+    {
+     "source": "L06-slides",
+     "from": 7,
+     "to": 7
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "modality": "slides",
+   "question": "What is Bayes' rule used for and how is it written?",
+   "reference": "It revises prior beliefs P(Ai) into P(Ai|B) after observing B: P(Ai|B) = P(Ai)P(B|Ai) / sum over j of P(Aj)P(B|Aj).",
+   "gold": [
+    {
+     "source": "L02-slides",
+     "from": 8,
+     "to": 8
+    },
+    {
+     "source": "L03-slides",
+     "from": 1,
+     "to": 1
+    },
+    {
+     "source": "textbook",
+     "from": 153,
+     "to": 155
+    },
+    {
+     "source": "L02-video",
+     "from": 2900,
+     "to": 3071
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "modality": "slides",
+   "question": "When are two events independent?",
+   "reference": "A and B are independent if P(A intersect B) = P(A)P(B); equivalently P(B|A) = P(B), so the occurrence of A gives no information about B.",
+   "gold": [
+    {
+     "source": "L03-slides",
+     "from": 3,
+     "to": 3
+    },
+    {
+     "source": "textbook",
+     "from": 147,
+     "to": 147
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "modality": "slides",
+   "question": "Can conditioning on an event make two independent events dependent? Give the two-coin example.",
+   "reference": "Yes. Conditional independence is independence under P(.|C) and need not match unconditional independence. With two unfair coins (P(H) = 0.9 and 0.1), tosses are independent given the coin but not unconditionally, because earlier tosses tell you which coin you hold.",
+   "gold": [
+    {
+     "source": "L03-slides",
+     "from": 4,
+     "to": 5
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "modality": "slides",
+   "question": "What is the difference between pairwise independence and independence of a collection of events?",
+   "reference": "Pairwise independence does not imply independence. For two fair coin tosses with A = first is H, B = second is H, C = both tosses give the same result, the events are pairwise independent but not independent.",
+   "gold": [
+    {
+     "source": "L03-slides",
+     "from": 6,
+     "to": 7
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "modality": "slides",
+   "question": "What is the king's sibling problem?",
+   "reference": "The king comes from a family of two children; what is the probability that his sibling is female?",
+   "gold": [
+    {
+     "source": "L03-slides",
+     "from": 8,
+     "to": 8
+    }
+   ]
+  },
+  {
+   "id": "s15",
+   "modality": "slides",
+   "question": "What is the basic counting principle?",
+   "reference": "If a process has r stages with ni choices at stage i, the number of possible outcomes is n1 * n2 * ... * nr.",
+   "gold": [
+    {
+     "source": "L04-slides",
+     "from": 3,
+     "to": 3
+    }
+   ]
+  },
+  {
+   "id": "s16",
+   "modality": "slides",
+   "question": "What is the probability that six rolls of a six-sided die all give different numbers?",
+   "reference": "6! / 6^6: there are 6! favourable outcomes out of 6^6 equally likely ones.",
+   "gold": [
+    {
+     "source": "L04-slides",
+     "from": 4,
+     "to": 4
+    }
+   ]
+  },
+  {
+   "id": "s17",
+   "modality": "slides",
+   "question": "How many k-element subsets does an n-element set have?",
+   "reference": "n choose k = n! / (k! (n-k)!).",
+   "gold": [
+    {
+     "source": "L04-slides",
+     "from": 5,
+     "to": 5
+    },
+    {
+     "source": "textbook",
+     "from": 100,
+     "to": 104
+    },
+    {
+     "source": "L04-video",
+     "from": 1300,
+     "to": 1750
+    }
+   ]
+  },
+  {
+   "id": "s18",
+   "modality": "slides",
+   "question": "What is the probability of k heads in n independent coin tosses with P(H) = p?",
+   "reference": "(n choose k) p^k (1-p)^(n-k), the binomial probabilities.",
+   "gold": [
+    {
+     "source": "L04-slides",
+     "from": 6,
+     "to": 6
+    },
+    {
+     "source": "L05-slides",
+     "from": 5,
+     "to": 5
+    }
+   ]
+  },
+  {
+   "id": "s19",
+   "modality": "slides",
+   "question": "A 52-card deck is dealt to 4 players. How do you count the number of ways to do it?",
+   "reference": "Each deal is a partition of the 52 cards into four hands of 13, so there are 52! / (13! 13! 13! 13!) outcomes.",
+   "gold": [
+    {
+     "source": "L04-slides",
+     "from": 8,
+     "to": 8
+    }
+   ]
+  },
+  {
+   "id": "s20",
+   "modality": "slides",
+   "question": "What is a random variable, mathematically?",
+   "reference": "An assignment of a number to every possible outcome: a function from the sample space to the real numbers.",
+   "gold": [
+    {
+     "source": "L05-slides",
+     "from": 2,
+     "to": 2
+    },
+    {
+     "source": "L06-slides",
+     "from": 2,
+     "to": 2
+    }
+   ]
+  },
+  {
+   "id": "s21",
+   "modality": "slides",
+   "question": "What is a probability mass function?",
+   "reference": "The PMF of a discrete random variable X is pX(x) = P(X = x); it is nonnegative and sums to 1 over x.",
+   "gold": [
+    {
+     "source": "L05-slides",
+     "from": 3,
+     "to": 4
+    },
+    {
+     "source": "L06-slides",
+     "from": 2,
+     "to": 2
+    }
+   ]
+  },
+  {
+   "id": "s22",
+   "modality": "slides",
+   "question": "How is the expectation of a discrete random variable defined and how can it be interpreted?",
+   "reference": "E[X] = sum over x of x pX(x). It is the centre of gravity of the PMF and the average over a large number of repetitions.",
+   "gold": [
+    {
+     "source": "L05-slides",
+     "from": 6,
+     "to": 6
+    },
+    {
+     "source": "L05-video",
+     "from": 1600,
+     "to": 1800
+    },
+    {
+     "source": "textbook",
+     "from": 233,
+     "to": 234
+    },
+    {
+     "source": "L06-slides",
+     "from": 2,
+     "to": 2
+    }
+   ]
+  },
+  {
+   "id": "s23",
+   "modality": "slides",
+   "question": "What is the easy way to compute E[g(X)]?",
+   "reference": "The expected value rule: E[g(X)] = sum over x of g(x) pX(x), without finding the PMF of g(X). In general E[g(X)] is not g(E[X]).",
+   "gold": [
+    {
+     "source": "L05-slides",
+     "from": 7,
+     "to": 8
+    },
+    {
+     "source": "L06-slides",
+     "from": 2,
+     "to": 2
+    }
+   ]
+  },
+  {
+   "id": "s24",
+   "modality": "slides",
+   "question": "How is variance defined?",
+   "reference": "var(X) = E[(X - E[X])^2] = E[X^2] - (E[X])^2.",
+   "gold": [
+    {
+     "source": "L05-slides",
+     "from": 8,
+     "to": 8
+    },
+    {
+     "source": "L06-slides",
+     "from": 2,
+     "to": 2
+    },
+    {
+     "source": "textbook",
+     "from": 265,
+     "to": 266
+    }
+   ]
+  },
+  {
+   "id": "s25",
+   "modality": "slides",
+   "question": "In the random speed example over 200 miles, why is the expected time not the distance divided by the expected speed?",
+   "reference": "Because time T = 200/V is a nonlinear function of speed, and in general E[g(V)] is not g(E[V]); E[T] must be computed as the sum of (200/v) pV(v).",
+   "gold": [
+    {
+     "source": "L06-slides",
+     "from": 3,
+     "to": 4
+    }
+   ]
+  },
+  {
+   "id": "s26",
+   "modality": "slides",
+   "question": "What is the geometric PMF and what does memorylessness mean for it?",
+   "reference": "For the number of independent coin tosses until the first head, pX(k) = (1-p)^(k-1) p. Memoryless: given that X > 2, the remaining number of tosses X - 2 has the same geometric PMF.",
+   "gold": [
+    {
+     "source": "L06-slides",
+     "from": 6,
+     "to": 6
+    },
+    {
+     "source": "L06-video",
+     "from": 1850,
+     "to": 2100
+    }
+   ]
+  },
+  {
+   "id": "s27",
+   "modality": "slides",
+   "question": "State the total expectation theorem.",
+   "reference": "For a partition A1, ..., An: E[X] = P(A1)E[X|A1] + ... + P(An)E[X|An].",
+   "gold": [
+    {
+     "source": "L06-slides",
+     "from": 7,
+     "to": 7
+    }
+   ]
+  },
+  {
+   "id": "s28",
+   "modality": "slides",
+   "question": "What is a joint PMF and how do you get the marginal PMF from it?",
+   "reference": "pX,Y(x,y) = P(X = x and Y = y); it sums to 1 over all pairs, and the marginal is pX(x) = sum over y of pX,Y(x,y).",
+   "gold": [
+    {
+     "source": "L06-slides",
+     "from": 8,
+     "to": 8
+    },
+    {
+     "source": "L07-slides",
+     "from": 2,
+     "to": 2
+    },
+    {
+     "source": "L06-video",
+     "from": 2550,
+     "to": 2800
+    },
+    {
+     "source": "L07-video",
+     "from": 300,
+     "to": 420
+    }
+   ]
+  },
+  {
+   "id": "s29",
+   "modality": "slides",
+   "question": "When are random variables X, Y, Z independent?",
+   "reference": "When pX,Y,Z(x,y,z) = pX(x) pY(y) pZ(z) for all x, y, z.",
+   "gold": [
+    {
+     "source": "L07-slides",
+     "from": 3,
+     "to": 3
+    }
+   ]
+  },
+  {
+   "id": "s30",
+   "modality": "slides",
+   "question": "What is the variance of the sum of two independent random variables?",
+   "reference": "If X and Y are independent, Var(X + Y) = Var(X) + Var(Y). Also Var(aX) = a^2 Var(X) and Var(X + a) = Var(X).",
+   "gold": [
+    {
+     "source": "L07-slides",
+     "from": 5,
+     "to": 5
+    },
+    {
+     "source": "textbook",
+     "from": 267,
+     "to": 268
+    },
+    {
+     "source": "L07-video",
+     "from": 1700,
+     "to": 1900
+    }
+   ]
+  },
+  {
+   "id": "s31",
+   "modality": "slides",
+   "question": "What are the mean and variance of a binomial random variable?",
+   "reference": "Writing X as a sum of n independent indicator variables gives E[X] = np and Var(X) = np(1-p).",
+   "gold": [
+    {
+     "source": "L07-slides",
+     "from": 6,
+     "to": 6
+    }
+   ]
+  },
+  {
+   "id": "s32",
+   "modality": "slides",
+   "question": "In the hat problem, what is the expected number of people who get their own hat back?",
+   "reference": "E[X] = 1. X is a sum of indicators Xi with P(Xi = 1) = 1/n, and by linearity E[X] = n * (1/n) = 1.",
+   "gold": [
+    {
+     "source": "L07-slides",
+     "from": 7,
+     "to": 8
+    }
+   ]
+  },
+  {
+   "id": "s33",
+   "modality": "slides",
+   "question": "How does a probability density function describe a continuous random variable?",
+   "reference": "P(a <= X <= b) is the integral of fX from a to b; the PDF is nonnegative and integrates to 1, and P(x <= X <= x + delta) is about fX(x) delta.",
+   "gold": [
+    {
+     "source": "L08-slides",
+     "from": 2,
+     "to": 2
+    }
+   ]
+  },
+  {
+   "id": "s34",
+   "modality": "slides",
+   "question": "What is a cumulative distribution function?",
+   "reference": "FX(x) = P(X <= x): the integral of the PDF up to x for a continuous variable, or the sum of the PMF over k <= x for a discrete one.",
+   "gold": [
+    {
+     "source": "L08-slides",
+     "from": 4,
+     "to": 5
+    }
+   ]
+  },
+  {
+   "id": "s35",
+   "modality": "slides",
+   "question": "What is a mixed distribution?",
+   "reference": "A combination of a PDF and a PMF: the random variable has both a continuous part and point masses, and its CDF has both slopes and jumps.",
+   "gold": [
+    {
+     "source": "L08-slides",
+     "from": 5,
+     "to": 5
+    }
+   ]
+  },
+  {
+   "id": "s36",
+   "modality": "slides",
+   "question": "What is the standard normal PDF, and its mean and variance?",
+   "reference": "fX(x) = (1/sqrt(2 pi)) e^(-x^2/2), with E[X] = 0 and var(X) = 1.",
+   "gold": [
+    {
+     "source": "L08-slides",
+     "from": 6,
+     "to": 6
+    }
+   ]
+  },
+  {
+   "id": "s37",
+   "modality": "slides",
+   "question": "How do you calculate probabilities for a normal random variable that is not standard?",
+   "reference": "There is no closed form for the CDF, so standardise: if X ~ N(mu, sigma^2) then (X - mu)/sigma ~ N(0,1), and use the standard normal table.",
+   "gold": [
+    {
+     "source": "L08-slides",
+     "from": 7,
+     "to": 7
+    },
+    {
+     "source": "L08-video",
+     "from": 2550,
+     "to": 2950
+    },
+    {
+     "source": "textbook",
+     "from": 221,
+     "to": 222
+    }
+   ]
+  },
+  {
+   "id": "t01",
+   "modality": "textbook",
+   "question": "What is the Monty Hall problem and should the contestant switch doors?",
+   "reference": "A contestant picks one of three doors, the host opens another door showing a goat, and the contestant may switch. Switching wins with probability 2/3, staying with 1/3.",
+   "gold": [
+    {
+     "source": "textbook",
+     "from": 144,
+     "to": 147
+    }
+   ]
+  },
+  {
+   "id": "t02",
+   "modality": "textbook",
+   "question": "What is Buffon's needle experiment?",
+   "reference": "A needle is dropped at random on a floor ruled with parallel lines; the probability that it crosses a line involves pi, so repeated drops give an estimate of pi.",
+   "gold": [
+    {
+     "source": "textbook",
+     "from": 51,
+     "to": 54
+    }
+   ]
+  },
+  {
+   "id": "t03",
+   "modality": "textbook",
+   "question": "In the birthday problem, how many people are needed for a better than even chance that two share a birthday?",
+   "reference": "23 people.",
+   "gold": [
+    {
+     "source": "textbook",
+     "from": 85,
+     "to": 87
+    }
+   ]
+  },
+  {
+   "id": "t04",
+   "modality": "textbook",
+   "question": "What is Bertrand's paradox about a random chord of a circle?",
+   "reference": "The probability that a random chord is longer than the side of the inscribed equilateral triangle comes out as 1/2, 1/3 or 1/4 depending on how 'random chord' is defined.",
+   "gold": [
+    {
+     "source": "textbook",
+     "from": 55,
+     "to": 58
+    }
+   ]
+  },
+  {
+   "id": "t05",
+   "modality": "textbook",
+   "question": "What is the Poisson distribution and when does it approximate the binomial?",
+   "reference": "P(X = k) = lambda^k e^(-lambda) / k!. It approximates the binomial when n is large and p is small, with lambda = np.",
+   "gold": [
+    {
+     "source": "textbook",
+     "from": 195,
+     "to": 199
+    }
+   ]
+  },
+  {
+   "id": "t06",
+   "modality": "textbook",
+   "question": "What is the hypergeometric distribution?",
+   "reference": "The distribution of the number of items of one type in a sample of size n drawn without replacement from a population of N items, k of which are of that type.",
+   "gold": [
+    {
+     "source": "textbook",
+     "from": 201,
+     "to": 201
+    }
+   ]
+  },
+  {
+   "id": "t07",
+   "modality": "textbook",
+   "question": "What is the St. Petersburg paradox?",
+   "reference": "A coin is tossed until the first head and the payoff doubles with each toss; the expected payoff is infinite, yet no one would pay much to play.",
+   "gold": [
+    {
+     "source": "textbook",
+     "from": 235,
+     "to": 235
+    }
+   ]
+  },
+  {
+   "id": "t08",
+   "modality": "textbook",
+   "question": "What does Stirling's formula approximate?",
+   "reference": "n factorial: n! is asymptotically n^n e^(-n) sqrt(2 pi n).",
+   "gold": [
+    {
+     "source": "textbook",
+     "from": 88,
+     "to": 89
+    }
+   ]
+  },
+  {
+   "id": "t09",
+   "modality": "textbook",
+   "question": "What is a Galton board?",
+   "reference": "A board with rows of pegs through which balls fall, bouncing left or right at each peg; the balls pile up in a bell-shaped (binomial) pattern.",
+   "gold": [
+    {
+     "source": "textbook",
+     "from": 107,
+     "to": 109
+    }
+   ]
+  },
+  {
+   "id": "t10",
+   "modality": "textbook",
+   "question": "What does Benford's law say about leading digits?",
+   "reference": "In many data sets the leading digit d occurs with probability log10(1 + 1/d), so 1 is the most common leading digit.",
+   "gold": [
+    {
+     "source": "textbook",
+     "from": 203,
+     "to": 204
+    }
+   ]
+  },
+  {
+   "id": "t11",
+   "modality": "textbook",
+   "question": "What gambling question did the Chevalier de Mere bring to Pascal?",
+   "reference": "Why betting on at least one six in four rolls of a die was favourable while betting on at least one double six in 24 rolls of two dice was not.",
+   "gold": [
+    {
+     "source": "textbook",
+     "from": 12,
+     "to": 12
+    },
+    {
+     "source": "textbook",
+     "from": 39,
+     "to": 40
+    }
+   ]
+  },
+  {
+   "id": "t12",
+   "modality": "textbook",
+   "question": "What is the Polya urn model?",
+   "reference": "An urn scheme in which a ball is drawn at random and returned together with additional balls of the same colour, so colours that are drawn become more likely.",
+   "gold": [
+    {
+     "source": "textbook",
+     "from": 160,
+     "to": 160
+    },
+    {
+     "source": "textbook",
+     "from": 182,
+     "to": 182
+    }
+   ]
+  },
+  {
+   "id": "t13",
+   "modality": "textbook",
+   "question": "How is the correlation of two random variables defined?",
+   "reference": "The covariance divided by the product of the standard deviations; it lies between -1 and 1.",
+   "gold": [
+    {
+     "source": "textbook",
+     "from": 289,
+     "to": 291
+    }
+   ]
+  },
+  {
+   "id": "t14",
+   "modality": "textbook",
+   "question": "What is the exponential density and what is its memoryless property?",
+   "reference": "f(x) = lambda e^(-lambda x) for x >= 0. Memoryless: P(X > r + s | X > r) = P(X > s).",
+   "gold": [
+    {
+     "source": "textbook",
+     "from": 74,
+     "to": 76
+    },
+    {
+     "source": "textbook",
+     "from": 171,
+     "to": 172
+    }
+   ]
+  },
+  {
+   "id": "t15",
+   "modality": "textbook",
+   "question": "What is the martingale doubling betting system?",
+   "reference": "A betting system in which the player doubles the stake after each loss, so that the first win recovers all losses plus one unit.",
+   "gold": [
+    {
+     "source": "textbook",
+     "from": 19,
+     "to": 22
+    }
+   ]
+  },
+  {
+   "id": "t16",
+   "modality": "textbook",
+   "question": "In the medical test example, why can a positive result still mean the disease is unlikely?",
+   "reference": "Because the disease is rare, false positives outnumber true positives; Bayes' formula gives a small posterior probability of disease despite an accurate test.",
+   "gold": [
+    {
+     "source": "textbook",
+     "from": 153,
+     "to": 157
+    }
+   ]
+  },
+  {
+   "id": "v01",
+   "modality": "video",
+   "question": "In the lecture's two tetrahedral dice example, how is the PMF of a random variable found?",
+   "reference": "Collect all outcomes for which the random variable takes a given value and add their probabilities, repeating for each value.",
+   "gold": [
+    {
+     "source": "L05-video",
+     "from": 1050,
+     "to": 1250
+    },
+    {
+     "source": "L05-slides",
+     "from": 4,
+     "to": 4
+    }
+   ]
+  },
+  {
+   "id": "v02",
+   "modality": "video",
+   "question": "How does the lecturer describe revising beliefs when the radar registers something?",
+   "reference": "The prior probability that a plane is present is revised using the radar reading; despite the alarm the posterior probability of a plane is modest because planes are rare and false alarms are common.",
+   "gold": [
+    {
+     "source": "L02-video",
+     "from": 1500,
+     "to": 2500
+    },
+    {
+     "source": "L02-slides",
+     "from": 5,
+     "to": 5
+    }
+   ]
+  },
+  {
+   "id": "f01",
+   "modality": "figure",
+   "question": "In the tree diagram for three tosses of a biased coin, what labels are on the branches and what are the leaves?",
+   "reference": "Each branch is labelled p for heads or 1-p for tails, and the eight leaves are the sequences HHH, HHT, HTH, HTT, THH, THT, TTH, TTT.",
+   "gold": [
+    {
+     "source": "L03-slides",
+     "from": 2,
+     "to": 2
+    }
+   ]
+  },
+  {
+   "id": "f02",
+   "modality": "figure",
+   "question": "What does the grid picture for two rolls of a tetrahedral die show?",
+   "reference": "A 4 by 4 grid of the 16 outcomes with the first roll X on one axis and the second roll Y on the other, alongside a tree giving the sequential description.",
+   "gold": [
+    {
+     "source": "L01-slides",
+     "from": 3,
+     "to": 3
+    },
+    {
+     "source": "L01-slides",
+     "from": 6,
+     "to": 6
+    },
+    {
+     "source": "L02-slides",
+     "from": 4,
+     "to": 4
+    }
+   ]
+  },
+  {
+   "id": "f03",
+   "modality": "figure",
+   "question": "What does the plot of a mixed distribution's CDF look like?",
+   "reference": "It rises with a slope where there is density and has jumps at the point masses; in the lecture's example it jumps at 1/2.",
+   "gold": [
+    {
+     "source": "L08-slides",
+     "from": 5,
+     "to": 5
+    }
+   ]
+  }
+ ],
+ "off_topic": [
+  {
+   "id": "o01",
+   "question": "How does a transformer neural network work?"
+  },
+  {
+   "id": "o02",
+   "question": "What is the capital of Australia?"
+  },
+  {
+   "id": "o03",
+   "question": "Explain how photosynthesis converts light into chemical energy."
+  },
+  {
+   "id": "o04",
+   "question": "What is the time complexity of quicksort?"
+  },
+  {
+   "id": "o05",
+   "question": "What were the main causes of the French Revolution?"
+  },
+  {
+   "id": "o06",
+   "question": "How do mRNA vaccines work?"
+  },
+  {
+   "id": "o07",
+   "question": "State Newton's second law of motion."
+  },
+  {
+   "id": "o08",
+   "question": "How do I reverse a linked list in Python?"
+  },
+  {
+   "id": "o09",
+   "question": "Who wrote the play Hamlet?"
+  },
+  {
+   "id": "o10",
+   "question": "What is the difference between TCP and UDP?"
+  }
+ ],
+ "uncovered": [
+  {
+   "id": "u01",
+   "question": "What is the moment generating function of a random variable?"
+  },
+  {
+   "id": "u02",
+   "question": "How does a Kalman filter update its state estimate?"
+  },
+  {
+   "id": "u03",
+   "question": "What is a p-value in hypothesis testing?"
+  },
+  {
+   "id": "u04",
+   "question": "State Chebyshev's inequality."
+  },
+  {
+   "id": "u05",
+   "question": "What is d-separation in a Bayesian network?"
+  },
+  {
+   "id": "u06",
+   "question": "What are the defining properties of Brownian motion?"
+  },
+  {
+   "id": "u07",
+   "question": "How is Shannon entropy defined?"
+  },
+  {
+   "id": "u08",
+   "question": "How do you construct a 95% confidence interval for a population mean?"
+  },
+  {
+   "id": "u09",
+   "question": "What is the distribution of interarrival times in a Poisson process?"
+  },
+  {
+   "id": "u10",
+   "question": "What is Simpson's paradox?"
+  }
+ ]
+}

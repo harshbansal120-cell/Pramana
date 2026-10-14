@@ -1,0 +1,24 @@
+# Default corpus: MIT OCW 6.041SC (CC BY-NC-SA) + Grinstead & Snell (GNU FDL).
+# Everything here is fetched over HTTP at ingest time. `group` pairs a slide
+# deck with the lecture video it was shown in, enabling slide<->timestamp alignment.
+course: "Probability (MIT 6.041SC + Grinstead & Snell)"
+sources:
+  - {id: L01-video,  kind: video,  group: L01, title: "Lecture 1: Probability Models and Axioms", youtube: j9WZyLZCBzs}
+  - {id: L01-slides, kind: slides, group: L01, title: "Lecture 1 slides", url: "https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/ff296575da32c406c2e56131e1e38997_MIT6_041SCF13_L01.pdf"}
+  - {id: L02-video,  kind: video,  group: L02, title: "Lecture 2: Conditioning and Bayes' Rule", youtube: TluTv5V0RmE}
+  - {id: L02-slides, kind: slides, group: L02, title: "Lecture 2 slides", url: "https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/a1462fa23de9d08c0dfd233a57278fed_MIT6_041SCF13_L02.pdf"}
+  - {id: L03-video,  kind: video,  group: L03, title: "Lecture 3: Independence", youtube: 19Ql_Q3l0GA}
+  - {id: L03-slides, kind: slides, group: L03, title: "Lecture 3 slides", url: "https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/a2015627268f4846eb3b1368623ce46f_MIT6_041SCF13_L03.pdf"}
+  - {id: L04-video,  kind: video,  group: L04, title: "Lecture 4: Counting", youtube: 6oV3pKLgW2I}
+  - {id: L04-slides, kind: slides, group: L04, title: "Lecture 4 slides", url: "https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/17ea1d60167279b01569bc6dcd030966_MIT6_041SCF13_L04.pdf"}
+  - {id: L05-video,  kind: video,  group: L05, title: "Lecture 5: Discrete Random Variables I", youtube: 3MOahpLxj6A}
+  - {id: L05-slides, kind: slides, group: L05, title: "Lecture 5 slides", url: "https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/e49cdbaf3129125869700c46aa661fa1_MIT6_041SCF13_L05.pdf"}
+  - {id: L06-video,  kind: video,  group: L06, title: "Lecture 6: Discrete Random Variables II", youtube: -qCEoqpwjf4}
+  - {id: L06-slides, kind: slides, group: L06, title: "Lecture 6 slides", url: "https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/9866bcafa1403ea4163ec3c6b31a53c0_MIT6_041SCF13_L06.pdf"}
+  - {id: L07-video,  kind: video,  group: L07, title: "Lecture 7: Discrete Random Variables III", youtube: EObHWIEKGjA}
+  - {id: L07-slides, kind: slides, group: L07, title: "Lecture 7 slides", url: "https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/c0a406b218730ddb16326d695a895c57_MIT6_041SCF13_L07.pdf"}
+  - {id: L08-video,  kind: video,  group: L08, title: "Lecture 8: Continuous Random Variables", youtube: mHfn_7ym6to}
+  - {id: L08-slides, kind: slides, group: L08, title: "Lecture 8 slides", url: "https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/7c4bf7cd98bf19b40e9965ee27d79c89_MIT6_041SCF13_L08.pdf"}
+  # Chapters 1-6 (PDF pages 9-292): discrete/continuous probability, combinatorics,
+  # conditional probability, distributions, expectation and variance.
+  - {id: textbook, kind: textbook, title: "Grinstead & Snell, Introduction to Probability", url: "https://math.dartmouth.edu/~prob/prob/prob.pdf", pages: [9, 292]}

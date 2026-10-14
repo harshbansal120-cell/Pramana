@@ -1,0 +1,41 @@
+# Render Blueprint — single web service serving both API and frontend.
+# https://docs.render.com/infrastructure-as-code
+
+services:
+  - type: web
+    name: pramana
+    runtime: python
+    plan: starter     # free tier works for demo; starter ($7/mo) needed for persistent disk
+
+    # Build: install Python deps, then build the React frontend into frontend/dist/.
+    buildCommand: |
+      pip install -r requirements.txt &&
+      cd frontend && npm install && npm run build
+
+    # Start: run from backend/ so "python -m pramana.cli" resolves the package.
+    startCommand: cd backend && python -m pramana.cli serve
+
+    # Render sets PORT automatically; the CLI reads it from the environment.
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.12"
+      - key: NODE_VERSION
+        value: "20.18.0"
+      - key: PRAMANA_DATA
+        value: /data
+      - key: GEMINI_API_KEY
+        sync: false                  # set manually in Render dashboard
+      - key: PRAMANA_GENERATOR
+        value: "google:gemini-3.8-flash"
+      - key: PRAMANA_VERIFIER
+        value: "google:gemini-3.7-flash"
+
+    healthCheckPath: /healthz
+
+    # Persistent disk for SQLite, downloads, renders, and caches.
+    # Requires the Starter plan or above ($7/month service + $0.25/GB/month disk).
+    # Remove this section to run on the free tier (data is ephemeral).
+    disk:
+      name: pramana-data
+      mountPath: /data
+      sizeGB: 1
