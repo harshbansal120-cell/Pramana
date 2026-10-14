@@ -1,11 +1,14 @@
 # Render Blueprint — single web service serving both API and frontend.
 # https://docs.render.com/infrastructure-as-code
+#
+# Free-tier deployment. The filesystem is ephemeral: data is lost on restart
+# or redeploy. Run ingestion from the Library page after each deploy.
 
 services:
   - type: web
     name: pramana
     runtime: python
-    plan: starter     # free tier works for demo; starter ($7/mo) needed for persistent disk
+    plan: free
 
     # Build: install Python deps, then build the React frontend into frontend/dist/.
     buildCommand: |
@@ -21,8 +24,6 @@ services:
         value: "3.11.12"
       - key: NODE_VERSION
         value: "20.18.0"
-      - key: PRAMANA_DATA
-        value: /data
       - key: GEMINI_API_KEY
         sync: false                  # set manually in Render dashboard
       - key: PRAMANA_GENERATOR
@@ -31,11 +32,3 @@ services:
         value: "google:gemini-3.7-flash"
 
     healthCheckPath: /healthz
-
-    # Persistent disk for SQLite, downloads, renders, and caches.
-    # Requires the Starter plan or above ($7/month service + $0.25/GB/month disk).
-    # Remove this section to run on the free tier (data is ephemeral).
-    disk:
-      name: pramana-data
-      mountPath: /data
-      sizeGB: 1
